@@ -1,0 +1,14 @@
+<h1>Devise Project</h1>
+
+<% unless user_signed_in? %>
+
+	<%= link_to 'Sign in', new_user_session_path %>
+	<%= link_to 'Register', new_user_registration_path %>
+	<%= link_to 'Sign in', new_user_session_path %>
+
+<% else %>
+
+	<h3>You are signed in as <%= current_user.email %>
+	<%= link_to 'Sign out', destroy_user_session_path %>
+
+<% end %>
